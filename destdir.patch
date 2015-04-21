@@ -1,0 +1,30 @@
+Index: hostname/Makefile
+===================================================================
+--- hostname.orig/Makefile	2013-11-03 06:25:42.000000000 -0800
++++ hostname/Makefile	2015-04-21 15:30:53.015223487 -0700
+@@ -1,7 +1,7 @@
+ CFLAGS+=-O2 -Wall
+ 
+ # uncomment the following line if you want to install to a different base dir.
+-#BASEDIR=/mnt/test
++BASEDIR=$(DESTDIR)
+ 
+ BINDIR:=/bin
+ MANDIR:=/usr/share/man
+@@ -17,14 +17,14 @@
+ 
+ install: hostname
+ 	install -d ${BASEDIR}$(MANDIR)/man1
+-	install -o root -g root -m 0644 hostname.1 ${BASEDIR}$(MANDIR)/man1
++	install -m 0644 hostname.1 ${BASEDIR}$(MANDIR)/man1
+ 	ln -fs hostname.1 ${BASEDIR}$(MANDIR)/man1/dnsdomainname.1
+ 	ln -fs hostname.1 ${BASEDIR}$(MANDIR)/man1/domainname.1
+ 	ln -fs hostname.1 ${BASEDIR}$(MANDIR)/man1/ypdomainname.1
+ 	ln -fs hostname.1 ${BASEDIR}$(MANDIR)/man1/nisdomainname.1
+ 
+ 	install -d ${BASEDIR}$(BINDIR)
+-	install -o root -g root -m 0755 hostname ${BASEDIR}$(BINDIR)
++	install -m 0755 hostname ${BASEDIR}$(BINDIR)
+ 	ln -fs hostname ${BASEDIR}$(BINDIR)/dnsdomainname
+ 	ln -fs hostname ${BASEDIR}$(BINDIR)/domainname
+ 	ln -fs hostname ${BASEDIR}$(BINDIR)/nisdomainname
