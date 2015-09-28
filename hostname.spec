@@ -4,7 +4,7 @@
 #
 Name     : hostname
 Version  : 3.16
-Release  : 4
+Release  : 5
 URL      : http://ftp.us.debian.org/debian/pool/main/h/hostname/hostname_3.16.tar.gz
 Source0  : http://ftp.us.debian.org/debian/pool/main/h/hostname/hostname_3.16.tar.gz
 Summary  : No detailed summary available
