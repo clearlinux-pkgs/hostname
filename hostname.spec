@@ -4,7 +4,7 @@
 #
 Name     : hostname
 Version  : 3.17
-Release  : 6
+Release  : 7
 URL      : http://ftp.us.debian.org/debian/pool/main/h/hostname/hostname_3.17.tar.gz
 Source0  : http://ftp.us.debian.org/debian/pool/main/h/hostname/hostname_3.17.tar.gz
 Summary  : No detailed summary available
