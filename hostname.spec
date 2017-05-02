@@ -4,7 +4,7 @@
 #
 Name     : hostname
 Version  : 3.18
-Release  : 10
+Release  : 11
 URL      : http://ftp.us.debian.org/debian/pool/main/h/hostname/hostname_3.18.tar.gz
 Source0  : http://ftp.us.debian.org/debian/pool/main/h/hostname/hostname_3.18.tar.gz
 Summary  : No detailed summary available
