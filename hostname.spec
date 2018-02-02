@@ -4,7 +4,7 @@
 #
 Name     : hostname
 Version  : 3.20
-Release  : 12
+Release  : 13
 URL      : http://ftp.us.debian.org/debian/pool/main/h/hostname/hostname_3.20.tar.gz
 Source0  : http://ftp.us.debian.org/debian/pool/main/h/hostname/hostname_3.20.tar.gz
 Summary  : No detailed summary available
