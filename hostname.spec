@@ -4,14 +4,13 @@
 #
 Name     : hostname
 Version  : 3.21
-Release  : 15
+Release  : 16
 URL      : http://ftp.us.debian.org/debian/pool/main/h/hostname/hostname_3.21.tar.gz
 Source0  : http://ftp.us.debian.org/debian/pool/main/h/hostname/hostname_3.21.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: hostname-bin = %{version}-%{release}
-Requires: hostname-data = %{version}-%{release}
 Requires: hostname-license = %{version}-%{release}
 Requires: hostname-man = %{version}-%{release}
 Patch1: destdir.patch
@@ -22,20 +21,10 @@ No detailed description available
 %package bin
 Summary: bin components for the hostname package.
 Group: Binaries
-Requires: hostname-data = %{version}-%{release}
 Requires: hostname-license = %{version}-%{release}
-Requires: hostname-man = %{version}-%{release}
 
 %description bin
 bin components for the hostname package.
-
-
-%package data
-Summary: data components for the hostname package.
-Group: Data
-
-%description data
-data components for the hostname package.
 
 
 %package license
@@ -63,11 +52,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1538696720
+export SOURCE_DATE_EPOCH=1551149853
 make  %{?_smp_mflags}
 
+
 %install
-export SOURCE_DATE_EPOCH=1538696720
+export SOURCE_DATE_EPOCH=1551149853
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/hostname
 cp COPYRIGHT %{buildroot}/usr/share/package-licenses/hostname/COPYRIGHT
@@ -85,13 +75,10 @@ cp debian/copyright %{buildroot}/usr/share/package-licenses/hostname/debian_copy
 %exclude /usr/bin/ypdomainname
 /usr/bin/hostname
 
-%files data
-%defattr(-,root,root,-)
-/usr/share/package-licenses/hostname/debian_copyright
-
 %files license
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/hostname/COPYRIGHT
+/usr/share/package-licenses/hostname/debian_copyright
 
 %files man
 %defattr(0644,root,root,0755)
