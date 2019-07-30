@@ -4,7 +4,7 @@
 #
 Name     : hostname
 Version  : 3.21
-Release  : 16
+Release  : 17
 URL      : http://ftp.us.debian.org/debian/pool/main/h/hostname/hostname_3.21.tar.gz
 Source0  : http://ftp.us.debian.org/debian/pool/main/h/hostname/hostname_3.21.tar.gz
 Summary  : No detailed summary available
@@ -51,28 +51,38 @@ man components for the hostname package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1551149853
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1564463033
+export GCC_IGNORE_WERROR=1
+export CFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$CFLAGS -fno-lto "
+export FFLAGS="$CFLAGS -fno-lto "
+export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1551149853
+export SOURCE_DATE_EPOCH=1564463033
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/hostname
 cp COPYRIGHT %{buildroot}/usr/share/package-licenses/hostname/COPYRIGHT
 cp debian/copyright %{buildroot}/usr/share/package-licenses/hostname/debian_copyright
 %make_install
+## Remove excluded files
+rm -f %{buildroot}/usr/bin/dnsdomainname
+rm -f %{buildroot}/usr/bin/domainname
+rm -f %{buildroot}/usr/bin/nisdomainname
+rm -f %{buildroot}/usr/bin/ypdomainname
+rm -f %{buildroot}/usr/share/man/man1/dnsdomainname.1
+rm -f %{buildroot}/usr/share/man/man1/domainname.1
+rm -f %{buildroot}/usr/share/man/man1/nisdomainname.1
+rm -f %{buildroot}/usr/share/man/man1/ypdomainname.1
 
 %files
 %defattr(-,root,root,-)
 
 %files bin
 %defattr(-,root,root,-)
-%exclude /usr/bin/dnsdomainname
-%exclude /usr/bin/domainname
-%exclude /usr/bin/nisdomainname
-%exclude /usr/bin/ypdomainname
 /usr/bin/hostname
 
 %files license
@@ -82,8 +92,4 @@ cp debian/copyright %{buildroot}/usr/share/package-licenses/hostname/debian_copy
 
 %files man
 %defattr(0644,root,root,0755)
-%exclude /usr/share/man/man1/dnsdomainname.1
-%exclude /usr/share/man/man1/domainname.1
-%exclude /usr/share/man/man1/nisdomainname.1
-%exclude /usr/share/man/man1/ypdomainname.1
 /usr/share/man/man1/hostname.1
