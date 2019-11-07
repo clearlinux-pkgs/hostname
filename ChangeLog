@@ -1,3 +1,13 @@
+hostname (3.23) unstable; urgency=medium
+
+  * Increase buffer size for all FQDNs to NI_MAXHOST as suggested by manpage.
+    (Closes: #942311)
+  * Use the same size for getdomainname().
+  * Bumped Standards-Version, no changes needed.
+  * Removed debian/compat file as suggested by lintian.
+
+ -- Michael Meskes <meskes@debian.org>  Thu, 07 Nov 2019 12:31:36 +0100
+
 hostname (3.22) unstable; urgency=medium
 
   * Made build process robust against binNMUs. (Closes: #935277)
