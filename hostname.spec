@@ -4,7 +4,7 @@
 #
 Name     : hostname
 Version  : 3.23
-Release  : 19
+Release  : 20
 URL      : https://mirrors.kernel.org/debian/pool/main/h/hostname/hostname_3.23.tar.gz
 Source0  : https://mirrors.kernel.org/debian/pool/main/h/hostname/hostname_3.23.tar.gz
 Summary  : No detailed summary available
@@ -53,17 +53,17 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1573155977
+export SOURCE_DATE_EPOCH=1604887260
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
-export FCFLAGS="$CFLAGS -fno-lto "
-export FFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$FFLAGS -fno-lto "
+export FFLAGS="$FFLAGS -fno-lto "
 export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1573155977
+export SOURCE_DATE_EPOCH=1604887260
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/hostname
 cp %{_builddir}/hostname/COPYRIGHT %{buildroot}/usr/share/package-licenses/hostname/87cf7aa221439c57d2f9220777b542884465aaf2
