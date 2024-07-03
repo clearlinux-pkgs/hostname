@@ -1,3 +1,18 @@
+hostname (3.23+nmu2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Install into /usr/bin instead of /bin. (Closes: #1056978)
+
+ -- Chris Hofstaedtler <zeha@debian.org>  Mon, 27 Nov 2023 14:03:42 +0100
+
+hostname (3.23+nmu1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Convert d/copyright to machine-readable format. (Closes: #1013131)
+  * Upgrade to 3.0 source format. (Closes: #1007059)
+
+ -- Bastian Germann <bage@debian.org>  Mon, 19 Dec 2022 14:33:11 +0100
+
 hostname (3.23) unstable; urgency=medium
 
   * Increase buffer size for all FQDNs to NI_MAXHOST as suggested by manpage.
