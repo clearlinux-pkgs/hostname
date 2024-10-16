@@ -1,9 +1,33 @@
-hostname (3.23+nmu2) unstable; urgency=medium
+hostname (3.25) unstable; urgency=medium
 
-  * Non-maintainer upload.
-  * Install into /usr/bin instead of /bin. (Closes: #1056978)
+  * Removed old rule that moved file from /usr/bin to /bin. (Closes: #1056978)
 
- -- Chris Hofstaedtler <zeha@debian.org>  Mon, 27 Nov 2023 14:03:42 +0100
+ -- Michael Meskes <meskes@debian.org>  Fri, 11 Oct 2024 08:12:34 +0200
+
+hostname (3.24) unstable; urgency=medium
+
+  [ Gioele Barabucci ]
+  * d/control: Add VCS URLs (Closes: #1050091)
+  * Makefile: Adopt GNU/debhelper conventions
+  * d/rules: Simplify using debhelper 13 (Closes: #1050093)
+  * d/rules: Extract program version using sed
+  * d/control: Update standards version to 4.6.2, no changes needed
+  * d/control: Specify Rules-Requires-Root: no
+
+  [ binlingyu ]
+  * Fix memory leak
+
+  [ lingyu bin ]
+  * Update .gitlab-ci.yml file
+
+  [ Michael Meskes ]
+  * Fixed VCS information
+  * Enable build with ubuntu suffixes.
+    Thanks to Matthias Klose <doko@ubuntu.com> (Closes: #995889)
+  * Update standards version to 4.7.0, no changes needed
+  * Release 3.24
+
+ -- Michael Meskes <meskes@debian.org>  Wed, 09 Oct 2024 15:57:37 +0200
 
 hostname (3.23+nmu1) unstable; urgency=medium
 
